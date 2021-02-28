@@ -326,12 +326,12 @@ const Home = ({ navigation }) => {
     },
   ];
 
-  const [categories, setCategories] = React.useState(categoryData);
+  // const [categories, setCategories] = React.useState(categoryData);
   const [selectedCategory, setSelectedCategory] = React.useState(null);
   const [restaurants, setRestaurants] = React.useState(restaurantData);
-  const [currentLocation, setCurrentLocation] = React.useState(
-    initialCurrentLocation
-  );
+  // const [currentLocation, setCurrentLocation] = React.useState(
+  //   initialCurrentLocation
+  // );
 
   function onSelectCategory(category) {
     //filter restaurant
@@ -345,7 +345,7 @@ const Home = ({ navigation }) => {
   }
 
   function getCategoryNameById(id) {
-    let category = categories.filter((a) => a.id === id);
+    let category = categoryData.filter((a) => a.id === id);
 
     if (category.length > 0) return category[0].name;
 
@@ -385,7 +385,9 @@ const Home = ({ navigation }) => {
               borderRadius: SIZES.radius,
             }}
           >
-            <Text style={{ ...FONTS.h3 }}>{currentLocation.streetName}</Text>
+            <Text style={{ ...FONTS.h3 }}>
+              {initialCurrentLocation.streetName}
+            </Text>
           </View>
         </View>
 
@@ -469,7 +471,7 @@ const Home = ({ navigation }) => {
         <Text style={{ ...FONTS.h1 }}>Categories</Text>
 
         <FlatList
-          data={categories}
+          data={categoryData}
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => `${item.id}`}
@@ -487,7 +489,7 @@ const Home = ({ navigation }) => {
         onPress={() =>
           navigation.navigate("Restaurant", {
             item,
-            currentLocation,
+            initialCurrentLocation,
           })
         }
       >
