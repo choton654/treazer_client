@@ -366,7 +366,11 @@ const Home = ({ navigation }) => {
   function renderHeader() {
     return (
       <View
-        style={{ flexDirection: "row", height: 50, backgroundColor: "#b9f6ca" }}
+        style={{
+          flexDirection: "row",
+          height: 50,
+          backgroundColor: "#bdbdbd",
+        }}
       >
         <TouchableOpacity
           style={{
@@ -404,6 +408,8 @@ const Home = ({ navigation }) => {
                 fontWeight: "800",
                 color: "#4A5568",
                 fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
+                textShadow: "2px 2px 4px #616161, -2px -2px 4px #fafafa",
+                letterSpacing: 5,
               }}
             >
               <i>treazer</i>{" "}
@@ -450,6 +456,7 @@ const Home = ({ navigation }) => {
             justifyContent: "center",
             marginRight: SIZES.padding,
             ...styles.shadow,
+            boxShadow: "3px 3px 5px #5d4037",
           }}
           onPress={() => onSelectCategory(item)}
         >
@@ -462,6 +469,10 @@ const Home = ({ navigation }) => {
               justifyContent: "center",
               backgroundColor:
                 selectedCategory?.id === item.id ? COLORS.white : "#fff9c4",
+              boxShadow:
+                selectedCategory?.id === item.id
+                  ? "3px 3px 5px #212121"
+                  : "3px 3px 5px #5d4037",
             }}
           >
             <Image
@@ -512,11 +523,17 @@ const Home = ({ navigation }) => {
             flexDirection: "row",
             flex: 1,
             height: "100%",
+            width: "100%",
             marginTop: 10,
           }}
         >
           <Animated.ScrollView
-            style={{ width, height: "100%" }}
+            style={{
+              width,
+              height: "100%",
+              boxShadow: "5px 5px 10px #424242",
+              borderRadius: "10px",
+            }}
             horizontal
             pagingEnabled
             scrollEventThrottle={16}
@@ -632,7 +649,8 @@ const Home = ({ navigation }) => {
             style={{
               width: "100%",
               height: 200,
-              borderRadius: SIZES.radius,
+              borderRadius: "40px",
+              boxShadow: "8px 8px 16px #424242",
             }}
           />
 
