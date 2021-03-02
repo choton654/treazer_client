@@ -8,7 +8,7 @@ import {
   Image,
   FlatList,
 } from "react-native";
-
+// import { SliderBox } from "react-native-image-slider-box";
 import { icons, images, SIZES, COLORS, FONTS } from "../constants";
 
 const Home = ({ navigation }) => {
@@ -379,14 +379,21 @@ const Home = ({ navigation }) => {
             style={{
               width: "70%",
               height: "100%",
-              backgroundColor: COLORS.lightGray3,
+              // backgroundColor: COLORS.lightGray3,
               alignItems: "center",
               justifyContent: "center",
               borderRadius: SIZES.radius,
             }}
           >
-            <Text style={{ ...FONTS.h3 }}>
-              {initialCurrentLocation.streetName}
+            <Text
+              style={{
+                ...FONTS.h1,
+                fontWeight: "800",
+                color: "#4A5568",
+                fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
+              }}
+            >
+              <i>treazer</i>{" "}
             </Text>
           </View>
         </View>
@@ -412,6 +419,10 @@ const Home = ({ navigation }) => {
   }
 
   function renderMainCategories() {
+    // const images = [
+    //   require("../assets/images/slide-1"),
+    //   require("../assets/images/slide-2"),
+    // ];
     const renderItem = ({ item }) => {
       return (
         <TouchableOpacity
@@ -419,7 +430,7 @@ const Home = ({ navigation }) => {
             padding: SIZES.padding,
             paddingBottom: SIZES.padding * 2,
             backgroundColor:
-              selectedCategory?.id === item.id ? COLORS.primary : COLORS.white,
+              selectedCategory?.id === item.id ? "#616161" : "#ef6c00",
             borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
@@ -436,9 +447,7 @@ const Home = ({ navigation }) => {
               alignItems: "center",
               justifyContent: "center",
               backgroundColor:
-                selectedCategory?.id === item.id
-                  ? COLORS.white
-                  : COLORS.lightGray,
+                selectedCategory?.id === item.id ? COLORS.white : "#fff9c4",
             }}
           >
             <Image
@@ -455,8 +464,8 @@ const Home = ({ navigation }) => {
             style={{
               marginTop: SIZES.padding,
               color:
-                selectedCategory?.id === item.id ? COLORS.white : COLORS.black,
-              ...FONTS.body5,
+                selectedCategory?.id === item.id ? COLORS.white : COLORS.white,
+              fontWeight: 600,
             }}
           >
             {item.name}
@@ -466,18 +475,53 @@ const Home = ({ navigation }) => {
     };
 
     return (
-      <View style={{ padding: SIZES.padding * 2 }}>
-        <Text style={{ ...FONTS.h1 }}>Main</Text>
-        <Text style={{ ...FONTS.h1 }}>Categories</Text>
-
+      <View
+        style={{
+          padding: SIZES.padding * 2,
+          backgroundColor: "#fff9c4",
+          height: "50%",
+          flexGrow: 0,
+        }}
+      >
+        <Text
+          style={{
+            ...FONTS.h4,
+            fontWeight: 800,
+            fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
+          }}
+        >
+          Eat what makes you happy
+        </Text>
         <FlatList
           data={categoryData}
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => `${item.id}`}
           renderItem={renderItem}
-          contentContainerStyle={{ paddingVertical: SIZES.padding * 2 }}
+          style={{ flexGrow: 0 }}
+          contentContainerStyle={{
+            paddingTop: 10,
+            paddingBottom: 10,
+            height: 120,
+          }}
         />
+        <Text
+          style={{
+            ...FONTS.h4,
+            fontWeight: 800,
+            fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
+          }}
+        >
+          Latest offer for you
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            flex: 1,
+            height: "100%",
+            marginTop: 10,
+          }}
+        ></View>
       </View>
     );
   }
@@ -594,6 +638,7 @@ const Home = ({ navigation }) => {
         data={restaurants}
         keyExtractor={(item) => `${item.id}`}
         renderItem={renderItem}
+        style={{ backgroundColor: "rgb(255, 249, 196)" }}
         contentContainerStyle={{
           paddingHorizontal: SIZES.padding * 2,
           paddingBottom: 30,
