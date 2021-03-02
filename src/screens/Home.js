@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   SafeAreaView,
   View,
@@ -7,25 +7,24 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-  ScrollView,
   Animated,
   Dimensions,
 } from "react-native";
 // import { SliderBox } from "react-native-image-slider-box";
 import { icons, images, SIZES, COLORS, FONTS } from "../constants";
 const { width } = Dimensions.get("window");
-const height = width * 0.6;
+// const height = width * 0.6;
 const Home = ({ navigation }) => {
   // Dummy Datas
-  const [active, setActive] = useState(0);
+  // const [active, setActive] = useState(0);
   const scrollX = new Animated.Value(0);
-  const changePic = ({ nativeEvent }) => {
-    const slide =
-      nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width;
-    if (slide !== active) {
-      setActive(slide);
-    }
-  };
+  // const changePic = ({ nativeEvent }) => {
+  //   const slide =
+  //     nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width;
+  //   if (slide !== active) {
+  //     setActive(slide);
+  //   }
+  // };
   const initialCurrentLocation = {
     streetName: "Kuching",
     gps: {
