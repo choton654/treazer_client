@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   View,
@@ -7,13 +7,25 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
+  ScrollView,
+  Animated,
+  Dimensions,
 } from "react-native";
 // import { SliderBox } from "react-native-image-slider-box";
 import { icons, images, SIZES, COLORS, FONTS } from "../constants";
-
+const { width } = Dimensions.get("window");
+const height = width * 0.6;
 const Home = ({ navigation }) => {
   // Dummy Datas
-
+  const [active, setActive] = useState(0);
+  const scrollX = new Animated.Value(0);
+  const changePic = ({ nativeEvent }) => {
+    const slide =
+      nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width;
+    if (slide !== active) {
+      setActive(slide);
+    }
+  };
   const initialCurrentLocation = {
     streetName: "Kuching",
     gps: {
@@ -354,7 +366,9 @@ const Home = ({ navigation }) => {
 
   function renderHeader() {
     return (
-      <View style={{ flexDirection: "row", height: 50 }}>
+      <View
+        style={{ flexDirection: "row", height: 50, backgroundColor: "#b9f6ca" }}
+      >
         <TouchableOpacity
           style={{
             width: 50,
@@ -419,10 +433,11 @@ const Home = ({ navigation }) => {
   }
 
   function renderMainCategories() {
-    // const images = [
-    //   require("../assets/images/slide-1"),
-    //   require("../assets/images/slide-2"),
-    // ];
+    const images = [
+      require("../assets/images/slide-1.gif"),
+      require("../assets/images/slide-2.gif"),
+    ];
+
     const renderItem = ({ item }) => {
       return (
         <TouchableOpacity
@@ -477,8 +492,9 @@ const Home = ({ navigation }) => {
     return (
       <View
         style={{
-          padding: SIZES.padding * 2,
-          backgroundColor: "#fff9c4",
+          paddingHorizontal: 20,
+          paddingVertical: 10,
+          backgroundColor: COLORS.white,
           height: "50%",
           flexGrow: 0,
         }}
@@ -486,6 +502,91 @@ const Home = ({ navigation }) => {
         <Text
           style={{
             ...FONTS.h4,
+            fontWeight: 800,
+            fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
+          }}
+        >
+          Latest offer for you
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            flex: 1,
+            height: "100%",
+            marginTop: 10,
+          }}
+        >
+          <Animated.ScrollView
+            style={{ width, height: "100%" }}
+            horizontal
+            pagingEnabled
+            scrollEventThrottle={16}
+            snapToAlignment="center"
+            showsHorizontalScrollIndicator={false}
+            onScroll={Animated.event(
+              [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+              { useNativeDriver: false }
+            )}
+          >
+            {" "}
+            {images.map((item, idx) => (
+              <Image
+                key={idx}
+                source={item}
+                style={{
+                  height: "100%",
+                  width,
+                  borderRadius: 10,
+                  resizeMode: "cover",
+                }}
+              />
+            ))}
+          </Animated.ScrollView>
+          {/* <ScrollView
+            pagingEnabled
+            horizontal
+            onScroll={changePic}
+            style={{ width, height: "100%" }}
+            showsHorizontalScrollIndicator={false}
+          >
+            {images.map((item, idx) => (
+              <Image
+                key={idx}
+                source={item}
+                style={{
+                  height: "100%",
+                  width,
+                  borderRadius: 10,
+                  resizeMode: "cover",
+                }}
+              />
+            ))}
+          </ScrollView> */}
+          {/* <View
+            style={{
+              width: "100%",
+              position: "absolute",
+              bottom: 0,
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              flexDirection: "row",
+            }}
+          >
+            {images.map((i, idx) => (
+              <Text
+                key={idx}
+                style={{ color: "#212121", border: "none", margin: 1 }}
+              >
+                ⚪
+              </Text>
+            ))}
+          </View> */}
+        </View>
+
+        <Text
+          style={{
+            ...FONTS.h4,
+            marginTop: 10,
             fontWeight: 800,
             fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
           }}
@@ -505,23 +606,6 @@ const Home = ({ navigation }) => {
             height: 120,
           }}
         />
-        <Text
-          style={{
-            ...FONTS.h4,
-            fontWeight: 800,
-            fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
-          }}
-        >
-          Latest offer for you
-        </Text>
-        <View
-          style={{
-            flexDirection: "row",
-            flex: 1,
-            height: "100%",
-            marginTop: 10,
-          }}
-        ></View>
       </View>
     );
   }
@@ -638,7 +722,7 @@ const Home = ({ navigation }) => {
         data={restaurants}
         keyExtractor={(item) => `${item.id}`}
         renderItem={renderItem}
-        style={{ backgroundColor: "rgb(255, 249, 196)" }}
+        style={{ backgroundColor: COLORS.white }}
         contentContainerStyle={{
           paddingHorizontal: SIZES.padding * 2,
           paddingBottom: 30,
