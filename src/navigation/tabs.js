@@ -51,7 +51,7 @@ const TabBarCustomButton = ({ accessibilityState, children, onPress }) => {
         style={{
           flex: 1,
           height: 60,
-          backgroundColor: "#5d4037",
+          backgroundColor: "white",
         }}
         activeOpacity={1}
         onPress={onPress}

@@ -369,7 +369,7 @@ const Home = ({ navigation }) => {
         style={{
           flexDirection: "row",
           height: 50,
-          backgroundColor: "#bdbdbd",
+          backgroundColor: "white",
         }}
       >
         <TouchableOpacity
@@ -450,13 +450,13 @@ const Home = ({ navigation }) => {
             padding: SIZES.padding,
             paddingBottom: SIZES.padding * 2,
             backgroundColor:
-              selectedCategory?.id === item.id ? "#616161" : "#ef6c00",
+              selectedCategory?.id === item.id ? "#616161" : "white",
             borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
             marginRight: SIZES.padding,
             ...styles.shadow,
-            boxShadow: "3px 3px 5px #5d4037",
+            boxShadow: "0px 4px 4px 0px #bdbdbd, 0px 0px 2px #bdbdbd",
           }}
           onPress={() => onSelectCategory(item)}
         >
@@ -468,11 +468,11 @@ const Home = ({ navigation }) => {
               alignItems: "center",
               justifyContent: "center",
               backgroundColor:
-                selectedCategory?.id === item.id ? COLORS.white : "#fff9c4",
+                selectedCategory?.id === item.id ? COLORS.white : "#e0e0e0",
               boxShadow:
                 selectedCategory?.id === item.id
-                  ? "3px 3px 5px #212121"
-                  : "3px 3px 5px #5d4037",
+                  ? "3px 3px 3px #212121"
+                  : "3px 3px 3px #bdbdbd",
             }}
           >
             <Image
@@ -488,8 +488,7 @@ const Home = ({ navigation }) => {
           <Text
             style={{
               marginTop: SIZES.padding,
-              color:
-                selectedCategory?.id === item.id ? COLORS.white : COLORS.white,
+              color: selectedCategory?.id === item.id ? COLORS.white : "black",
               fontWeight: 600,
             }}
           >
@@ -531,8 +530,8 @@ const Home = ({ navigation }) => {
             style={{
               width,
               height: "100%",
-              boxShadow: "5px 5px 10px #424242",
-              borderRadius: "10px",
+              boxShadow: "0px 4px 4px 0px #757575",
+              borderRadius: "30px",
             }}
             horizontal
             pagingEnabled
@@ -650,7 +649,8 @@ const Home = ({ navigation }) => {
               width: "100%",
               height: 200,
               borderRadius: "40px",
-              boxShadow: "8px 8px 16px #424242",
+              boxShadow:
+                "0 4px 8px 0 #757575, 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
             }}
           />
 
@@ -745,6 +745,7 @@ const Home = ({ navigation }) => {
           paddingBottom: 30,
         }}
       />
+      // <View>{renderItem}</View>
     );
   }
 
