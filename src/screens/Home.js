@@ -597,8 +597,8 @@ const Home = ({ navigation }) => {
             ))}
           </View> */}
         </View>
-
-        {/* <Text
+        {/* 
+        <Text
           style={{
             ...FONTS.h4,
             marginTop: 10,

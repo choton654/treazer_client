@@ -6,8 +6,8 @@ import {
 } from "@react-navigation/bottom-tabs";
 import Svg, { Path } from "react-native-svg";
 import { isIphoneX } from "react-native-iphone-x-helper";
-import { Home } from "../screens";
-import Profile from "../screens/profile";
+import { Home, Profile } from "../screens";
+// import Profile from "../screens/profile";
 import { COLORS, icons } from "../constants";
 
 const Tab = createBottomTabNavigator();
