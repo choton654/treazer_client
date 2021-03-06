@@ -1,28 +1,30 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, Pressable } from "react-native";
-// import { Text } from "galio-framework";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 const Profile = () => {
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
         <View style={styles.logo}>
-          <Image
-            style={styles.tinyLogo}
-            source={{
-              uri:
-                "https://thumbs.dreamstime.com/b/shutdown-vector-thin-line-icon-shutdown-icon-website-design-desktop-envelopment-development-premium-pack-195314279.jpg",
-            }}
-          />
+          <PowerSettingsNewIcon fontSize="large" style={{ color: "#00796b" }} />
         </View>
-        <Pressable style={styles.button}>
-          <Text>I'm pressable!</Text>
-        </Pressable>
-        <Pressable style={styles.button}>
-          <Text>I'm pressable!</Text>
-        </Pressable>
-        <Pressable style={styles.button}>
-          <Text>I'm pressable!</Text>
-        </Pressable>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>
+            <span style={{ color: "#448aff" }}>Login</span>
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>
+            {" "}
+            <span style={{ color: "#fb8c00" }}>Sign up</span>
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>
+            {" "}
+            <span style={{ color: "#43a047" }}>Login</span>
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -32,9 +34,9 @@ export default Profile;
 
 const styles = StyleSheet.create({
   container: {
-    margin: 0,
-    height: "100vh",
-    width: "100vw",
+    marginTop: "40PX",
+    height: "80%",
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
   profile: {
     alignItems: "center",
     flexDirection: "column",
-    height: "80%",
+    height: "100%",
     width: "80%",
     borderRadius: "20px",
     background: "#f6efef",
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     // marginHorizontal: "auto",
+    justifyContent: "center",
     alignItems: "center",
     marginTop: "20px",
     height: "70px",
@@ -66,11 +69,21 @@ const styles = StyleSheet.create({
   button: {
     height: "10%",
     width: "80%",
-    marginVertical: "40px",
+    marginVertical: "30px",
     borderRadius: "10px",
-    background: "linear-gradient(145deg, #ffffff, #ddd7d7)",
-    boxShadow: "8px 8px 11px #9d9999, -8px -8px 11px #ffffff",
+    backgroundColor: "linear-gradient(145deg, #d7a2a2, #b58888)",
+    boxShadow: "3px 4px 6px #9d9999, -3px -4px 6px #ffffff",
     textTransform: "uppercase",
+  },
+  text: {
+    pointer: "courser",
+    marginVertical: "auto",
+    marginHorizontal: "auto",
+    letterSpacing: 3,
+    fontSize: "20px",
+    fontWeight: "bold",
+    textShadow: "2px 2px 4px #7a6e6e, -2px -2px 4px #ffffff",
+    fontFamily: "Josefin Sans",
   },
 
   // button:after {

@@ -6,7 +6,7 @@ import {
 } from "@react-navigation/bottom-tabs";
 import Svg, { Path } from "react-native-svg";
 import { isIphoneX } from "react-native-iphone-x-helper";
-import { Home, Profile } from "../screens";
+import { Home, Profile, Addfood } from "../screens";
 // import Profile from "../screens/profile";
 import { COLORS, icons } from "../constants";
 
@@ -140,7 +140,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="AddItem"
-        component={Home}
+        component={Addfood}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
