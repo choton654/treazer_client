@@ -4,28 +4,42 @@ import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 
 const Profile = () => {
   return (
-    <View style={styles.container}>
+    <View style={{ flex: 1, flexDirection: "column" }}>
+      <View style={styles.container}>
+        {" "}
+        <PowerSettingsNewIcon fontSize="large" style={{ color: "#ffffff" }} />
+      </View>
       <View style={styles.profile}>
-        <View style={styles.logo}>
-          <PowerSettingsNewIcon fontSize="large" style={{ color: "#00796b" }} />
-        </View>
+        <Text style={styles.text}>
+          ACCOUNT
+          <br />
+          <span style={{ fontSize: "12px", letterSpacing: 0 }}>
+            Login/Create Account quickly to manage orders{" "}
+          </span>
+        </Text>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>
-            <span style={{ color: "#448aff" }}>Login</span>
+          <Text style={styles.text2}>
+            <span
+              style={{
+                color: "#ffffff",
+                fontFamily: "Josefin Sans",
+                letterSpacing: 4,
+              }}
+            >
+              Login
+            </span>
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>
-            {" "}
-            <span style={{ color: "#fb8c00" }}>Sign up</span>
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>
-            {" "}
-            <span style={{ color: "#43a047" }}>Login</span>
-          </Text>
-        </TouchableOpacity>
+        <Text
+          style={{
+            marginVertical: "20px",
+            fontFamily: "Josefin Sans",
+            fontSize: "15px",
+          }}
+        >
+          Don't have an account?{" "}
+          <span style={{ color: "#00e676" }}>Signup Here</span>
+        </Text>
       </View>
     </View>
   );
@@ -35,55 +49,58 @@ export default Profile;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: "40PX",
-    height: "80%",
+    height: "55%",
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-    textAlign: "center",
+    backgroundImage: `url(${"https://www.aafoodservice.com/wp-content/themes/custom-theme/img/slider-v1704.jpg"})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% 50%",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
   },
   profile: {
     alignItems: "center",
+    backgroundColor: "#ffffff",
     flexDirection: "column",
-    height: "100%",
-    width: "80%",
-    borderRadius: "20px",
-    background: "#f6efef",
-    boxShadow: "8px 8px 12px #b4aeae, -8px -8px 12px #ffffff",
+    height: "45%",
+    width: "100%",
   },
   logo: {
     // marginHorizontal: "auto",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "20px",
+    marginVertical: "auto",
+    marginHorizontal: "auto",
     height: "70px",
     width: "70px",
     borderRadius: "175px",
-    background: "linear-gradient(145deg, #ddd7d7, #ffffff)",
-    boxShadow: "5px 5px 10px #827f7f, -5px -5px 10px #ffffff",
+    backgroundColor: "#424242",
   },
-  tinyLogo: {
-    borderRadius: "175px",
-    width: 70,
-    height: 70,
+  text2: {
+    pointer: "courser",
+    marginVertical: "auto",
+    marginHorizontal: "auto",
+    letterSpacing: 3,
+    fontSize: "15px",
+    fontWeight: "bold",
   },
   button: {
-    height: "10%",
+    height: "15%",
     width: "80%",
-    marginVertical: "30px",
+    textAlign: "center",
     borderRadius: "10px",
-    backgroundColor: "linear-gradient(145deg, #d7a2a2, #b58888)",
+    backgroundColor: "#ff6d00",
     boxShadow: "3px 4px 6px #9d9999, -3px -4px 6px #ffffff",
     textTransform: "uppercase",
   },
   text: {
     pointer: "courser",
-    marginVertical: "auto",
+    marginVertical: "20px",
     marginHorizontal: "auto",
     letterSpacing: 3,
     fontSize: "20px",
     fontWeight: "bold",
-    textShadow: "2px 2px 4px #7a6e6e, -2px -2px 4px #ffffff",
     fontFamily: "Josefin Sans",
   },
 

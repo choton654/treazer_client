@@ -1,14 +1,18 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 const Addfood = () => {
-  return (
-    <View>
-      <Text>Addfood</Text>
-    </View>
-  );
+  return <View style={styles.container}></View>;
 };
 
 export default Addfood;
 
-// const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#bb8b8b",
+    height: "100%",
+    width: "100%",
+    margin: "auto",
+    textAlign: "center",
+  },
+});
