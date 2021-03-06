@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 // import { Text } from "galio-framework";
 const Profile = () => {
   return (
@@ -14,6 +14,15 @@ const Profile = () => {
             }}
           />
         </View>
+        <Pressable style={styles.button}>
+          <Text>I'm pressable!</Text>
+        </Pressable>
+        <Pressable style={styles.button}>
+          <Text>I'm pressable!</Text>
+        </Pressable>
+        <Pressable style={styles.button}>
+          <Text>I'm pressable!</Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -54,4 +63,47 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
   },
+  button: {
+    height: "10%",
+    width: "80%",
+    marginVertical: "40px",
+    borderRadius: "10px",
+    background: "linear-gradient(145deg, #ffffff, #ddd7d7)",
+    boxShadow: "8px 8px 11px #9d9999, -8px -8px 11px #ffffff",
+    textTransform: "uppercase",
+  },
+
+  // button:after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 200%;
+  //   height: 100%;
+  //   opacity: 0;
+  //   transform: translateX(-100%);
+
+  //   background: rgba(255, 255, 255, 0.13);
+  //   background: linear-gradient(
+  //     to right,
+  //     rgba(255, 255, 255, 0.13) 0%,
+  //     rgba(255, 255, 255, 0.13) 77%,
+  //     rgba(255, 255, 255, 0.5) 92%,
+  //     rgba(255, 255, 255, 0.3) 100%
+  //   );
+  // }
+
+  // button:hover:after {
+  //   opacity: 1;
+  //   top: 0;
+  //   left: 0;
+  //   transform: translateX(0);
+  //   transition-property: transform, opacity;
+  //   transition-duration: 0.7s, 0.15s;
+  //   transition-timing-function: ease;
+  // }
+
+  // button:active:after {
+  //   opacity: 0;
+  // }
 });
