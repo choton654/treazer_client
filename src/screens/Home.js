@@ -504,11 +504,11 @@ const Home = ({ navigation }) => {
           paddingHorizontal: 20,
           paddingVertical: 10,
           backgroundColor: COLORS.white,
-          height: "50%",
+          height: "45%",
           flexGrow: 0,
         }}
       >
-        <Text
+        {/* <Text
           style={{
             ...FONTS.h4,
             fontWeight: 800,
@@ -516,7 +516,7 @@ const Home = ({ navigation }) => {
           }}
         >
           Latest offer for you
-        </Text>
+        </Text> */}
         <View
           style={{
             flexDirection: "row",
@@ -598,7 +598,7 @@ const Home = ({ navigation }) => {
           </View> */}
         </View>
 
-        <Text
+        {/* <Text
           style={{
             ...FONTS.h4,
             marginTop: 10,
@@ -607,7 +607,7 @@ const Home = ({ navigation }) => {
           }}
         >
           Eat what makes you happy
-        </Text>
+        </Text> */}
         <FlatList
           data={categoryData}
           horizontal
@@ -616,6 +616,7 @@ const Home = ({ navigation }) => {
           renderItem={renderItem}
           style={{ flexGrow: 0 }}
           contentContainerStyle={{
+            marginVertical: 10,
             paddingTop: 10,
             paddingBottom: 10,
             height: 120,
