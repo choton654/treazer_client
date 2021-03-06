@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 
 const Addfood = () => {
   return (
@@ -11,4 +11,4 @@ const Addfood = () => {
 
 export default Addfood;
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});
