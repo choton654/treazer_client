@@ -8,6 +8,7 @@ const Profile = () => {
       <View style={styles.container}>
         {" "}
         <PowerSettingsNewIcon fontSize="large" style={{ color: "#ffffff" }} />
+        <Text>LIVE FOR FOOD</Text>
       </View>
       <View style={styles.profile}>
         <Text style={styles.text}>
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundImage: `url(${"https://www.aafoodservice.com/wp-content/themes/custom-theme/img/slider-v1704.jpg"})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "100% 50%",
+    // backgroundSize: "100% 50%",
     backgroundPosition: "center",
     backgroundSize: "cover",
   },
@@ -103,38 +104,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontFamily: "Josefin Sans",
   },
-
-  // button:after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 200%;
-  //   height: 100%;
-  //   opacity: 0;
-  //   transform: translateX(-100%);
-
-  //   background: rgba(255, 255, 255, 0.13);
-  //   background: linear-gradient(
-  //     to right,
-  //     rgba(255, 255, 255, 0.13) 0%,
-  //     rgba(255, 255, 255, 0.13) 77%,
-  //     rgba(255, 255, 255, 0.5) 92%,
-  //     rgba(255, 255, 255, 0.3) 100%
-  //   );
-  // }
-
-  // button:hover:after {
-  //   opacity: 1;
-  //   top: 0;
-  //   left: 0;
-  //   transform: translateX(0);
-  //   transition-property: transform, opacity;
-  //   transition-duration: 0.7s, 0.15s;
-  //   transition-timing-function: ease;
-  // }
-
-  // button:active:after {
-  //   opacity: 0;
-  // }
 });

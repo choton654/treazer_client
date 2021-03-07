@@ -17,13 +17,13 @@ const { width } = Dimensions.get("window");
 const Home = ({ navigation }) => {
   // Dummy Datas
   const scrollX = new Animated.Value(0);
-  const initialCurrentLocation = {
-    streetName: "Kuching",
-    gps: {
-      latitude: 1.5496614931250685,
-      longitude: 110.36381866919922,
-    },
-  };
+  // const initialCurrentLocation = {
+  //   streetName: "Kuching",
+  //   gps: {
+  //     latitude: 1.5496614931250685,
+  //     longitude: 110.36381866919922,
+  //   },
+  // };
 
   const categoryData = [
     {
@@ -332,7 +332,7 @@ const Home = ({ navigation }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [restaurants, setRestaurants] = useState(restaurantData);
 
-  function onSelectCategory(category) {
+  const onSelectCategory = (category) => {
     //filter restaurant
     let restaurantList = restaurantData.filter((a) =>
       a.categories.includes(category.id)
@@ -341,17 +341,17 @@ const Home = ({ navigation }) => {
     setRestaurants(restaurantList);
 
     setSelectedCategory(category);
-  }
+  };
 
-  function getCategoryNameById(id) {
+  const getCategoryNameById = (id) => {
     let category = categoryData.filter((a) => a.id === id);
 
     if (category.length > 0) return category[0].name;
 
     return "";
-  }
+  };
 
-  function renderHeader() {
+  const renderHeader = () => {
     return (
       <View
         style={{
@@ -423,7 +423,7 @@ const Home = ({ navigation }) => {
         </TouchableOpacity>
       </View>
     );
-  }
+  };
 
   function renderMainCategories() {
     const images = [
@@ -614,16 +614,16 @@ const Home = ({ navigation }) => {
     );
   }
 
-  function renderRestaurantList() {
+  const renderRestaurantList = () => {
     const renderItem = ({ item }) => (
       <TouchableOpacity
         style={{ marginBottom: SIZES.padding * 2 }}
-        onPress={() =>
-          navigation.navigate("Restaurant", {
-            item,
-            initialCurrentLocation,
-          })
-        }
+        // onPress={() =>
+        //   navigation.navigate("Restaurant", {
+        //     item,
+        //     initialCurrentLocation,
+        //   })
+        // }
       >
         {/* Image */}
         <View
@@ -662,62 +662,77 @@ const Home = ({ navigation }) => {
         </View>
 
         {/* Restaurant Info */}
-        <Text style={{ ...FONTS.body2 }}>{item.name}</Text>
-
         <View
           style={{
-            marginTop: SIZES.padding,
-            flexDirection: "row",
+            alignItems: "center",
+            width: "100%",
+            padding: 10,
+            marginVertical: 12,
+            flexDirection: "column",
+            marginHorizontal: "auto",
+            borderRadius: "17px",
+            backgroundColor: "#ffffff",
+            boxShadow: "0 4px 8px 0 #757575, 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
           }}
         >
-          {/* Rating */}
-          <Image
-            source={icons.star}
-            style={{
-              height: 20,
-              width: 20,
-              tintColor: COLORS.primary,
-              marginRight: 10,
-            }}
-          />
-          <Text style={{ ...FONTS.body3 }}>{item.rating}</Text>
-
-          {/* Categories */}
+          <Text style={{ fontSize: 20, fontFamily: "Josefin Sans" }}>
+            {item.name}
+          </Text>
           <View
             style={{
+              marginTop: SIZES.padding,
               flexDirection: "row",
-              marginLeft: 10,
             }}
           >
-            {item.categories.map((categoryId) => {
-              return (
-                <View style={{ flexDirection: "row" }} key={categoryId}>
-                  <Text style={{ ...FONTS.body3 }}>
-                    {getCategoryNameById(categoryId)}
-                  </Text>
-                  <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}>
-                    {" "}
-                    .{" "}
-                  </Text>
-                </View>
-              );
-            })}
+            {/* Rating */}
+            <Image
+              source={icons.star}
+              style={{
+                height: 20,
+                width: 20,
+                tintColor: COLORS.primary,
+                marginRight: 10,
+              }}
+            />
+            <Text style={{ ...FONTS.body3 }}>{item.rating}</Text>
 
-            {/* Price */}
-            {[1, 2, 3].map((priceRating) => (
-              <Text
-                key={priceRating}
-                style={{
-                  ...FONTS.body3,
-                  color:
-                    priceRating <= item.priceRating
-                      ? COLORS.black
-                      : COLORS.darkgray,
-                }}
-              >
-                $
-              </Text>
-            ))}
+            {/* Categories */}
+            <View
+              style={{
+                flexDirection: "row",
+                marginLeft: 10,
+              }}
+            >
+              {item.categories.map((categoryId) => {
+                return (
+                  <View style={{ flexDirection: "row" }} key={categoryId}>
+                    <Text style={{ ...FONTS.body3 }}>
+                      {getCategoryNameById(categoryId)}
+                    </Text>
+                    <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}>
+                      {" "}
+                      .{" "}
+                    </Text>
+                  </View>
+                );
+              })}
+
+              {/* Price */}
+              {[1, 2, 3].map((priceRating) => (
+                <Text
+                  key={priceRating}
+                  style={{
+                    ...FONTS.body3,
+                    color:
+                      priceRating <= item.priceRating
+                        ? COLORS.black
+                        : COLORS.darkgray,
+                  }}
+                >
+                  $
+                </Text>
+              ))}
+            </View>
           </View>
         </View>
       </TouchableOpacity>
@@ -731,12 +746,12 @@ const Home = ({ navigation }) => {
         style={{ backgroundColor: COLORS.white }}
         contentContainerStyle={{
           paddingHorizontal: SIZES.padding * 2,
+          paddingTop: 10,
           paddingBottom: 30,
         }}
       />
-      // <View>{renderItem}</View>
     );
-  }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
