@@ -8,7 +8,20 @@ const Profile = () => {
       <View style={styles.container}>
         {" "}
         <PowerSettingsNewIcon fontSize="large" style={{ color: "#ffffff" }} />
-        <Text>LIVE FOR FOOD</Text>
+        <Text
+          style={{
+            marginVertical: "30px",
+            // color: "#757575",
+            color: "#888888",
+            textShadow: "2px 0 #888888",
+            letterSpacing: "2px",
+            fontWeight: "bold",
+            fontSize: "30px",
+            fontFamily: "Josefin Sans",
+          }}
+        >
+          LIVE FOR FOOD
+        </Text>
       </View>
       <View style={styles.profile}>
         <Text style={styles.text}>
