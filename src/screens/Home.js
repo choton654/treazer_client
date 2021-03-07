@@ -386,7 +386,7 @@ const Home = ({ navigation }) => {
             style={{
               width,
               height: "100%",
-              boxShadow: "0px 4px 4px 0px #757575",
+              boxShadow: "0px 4px 4px 0px #C9CCD1",
               borderRadius: "30px",
             }}
             horizontal

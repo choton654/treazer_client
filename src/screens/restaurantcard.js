@@ -86,7 +86,7 @@ const Restaurantcard = ({ item }) => {
             height: 200,
             borderTopRightRadius: "40px",
             borderTopLeftRadius: "40px",
-            boxShadow: "0 4px 8px 0 #757575, 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+            boxShadow: "0 4px 8px 0 #C9CCD1, 0 6px 20px 0 #C9CCD1",
           }}
         />
 
@@ -123,7 +123,7 @@ const Restaurantcard = ({ item }) => {
           borderBottomRightRadius: "17px",
           borderBottomLeftRadius: "17px",
           backgroundColor: "#ffffff",
-          boxShadow: "0 4px 8px 0 #757575",
+          boxShadow: "0 4px 8px 0 #C9CCD1",
         }}
       >
         <Text style={{ fontSize: 20, fontFamily: "Josefin Sans" }}>

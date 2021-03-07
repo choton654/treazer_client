@@ -37,7 +37,7 @@ const TabBarCustomButton = ({ accessibilityState, children, onPress }) => {
             width: 50,
             height: 50,
             borderRadius: 25,
-            backgroundColor: "#424242",
+            backgroundColor: "#00A7FF",
           }}
           onPress={onPress}
         >

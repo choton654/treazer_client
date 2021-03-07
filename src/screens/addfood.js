@@ -5,27 +5,24 @@ import { icons } from "../constants";
 const Addfood = () => {
   return (
     <View style={styles.container}>
+      <Text
+        style={{
+          marginVertical: "30px",
+          color: "#ffffff",
+          textShadow: "2px 0 #ffffff",
+          letterSpacing: "2px",
+          fontWeight: "bold",
+          fontSize: "25px",
+          fontFamily: "Josefin Sans",
+        }}
+      >
+        What you wish to add?
+      </Text>
       <ScrollView
         style={{
           width: "100%",
-          height: "90%",
-          paddingVertical: "auto",
         }}
       >
-        <Text
-          style={{
-            marginVertical: "30px",
-            // color: "#757575",
-            color: "#ffffff",
-            textShadow: "2px 0 #ffffff",
-            letterSpacing: "2px",
-            fontWeight: "bold",
-            fontSize: "25px",
-            fontFamily: "Josefin Sans",
-          }}
-        >
-          What you wish to add?
-        </Text>
         <View style={styles.listView}>
           <View style={styles.imageView}>
             <Image
@@ -171,7 +168,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.donut}`,
               }}
             />
           </View>

@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import Restaurant from "../screens/Restaurant";
 import Tabs from "./tabs";
+// import Header from "../screens/header";
 
 const Stack = createStackNavigator();
 const Rootnavigation = () => {
@@ -13,6 +14,7 @@ const Rootnavigation = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
+          // header: () => <Header />,
         }}
         initialRouteName={"Home"}
       >

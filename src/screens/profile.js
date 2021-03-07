@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     borderRadius: "10px",
     backgroundColor: "#ff6d00",
-    boxShadow: "3px 4px 6px #9d9999, -3px -4px 6px #ffffff",
+    boxShadow: "3px 4px 6px #C9CCD1, -3px -4px 6px #ffffff",
     textTransform: "uppercase",
   },
   text: {

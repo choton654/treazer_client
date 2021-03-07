@@ -14,7 +14,7 @@ const Restaurantlist = ({ item, onSelectCategory, selectedCategory }) => {
         justifyContent: "center",
         marginRight: SIZES.padding,
         ...styles.shadow,
-        boxShadow: "0px 4px 4px 0px #bdbdbd, 0px 0px 2px #bdbdbd",
+        boxShadow: "0px 4px 4px 0px #C9CCD1, 0px 0px 2px #C9CCD1",
       }}
       onPress={() => onSelectCategory(item)}
     >
@@ -30,7 +30,7 @@ const Restaurantlist = ({ item, onSelectCategory, selectedCategory }) => {
           boxShadow:
             selectedCategory?.id === item.id
               ? "3px 3px 3px #212121"
-              : "3px 3px 3px #bdbdbd",
+              : "3px 3px 3px #C9CCD1",
         }}
       >
         <Image
