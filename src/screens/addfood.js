@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, ScrollView, Image } from "react-native";
+import { StyleSheet, View, ScrollView, Image, Text } from "react-native";
 import { icons } from "../constants";
 
 const Addfood = () => {
@@ -12,6 +12,20 @@ const Addfood = () => {
           paddingVertical: "auto",
         }}
       >
+        <Text
+          style={{
+            marginVertical: "30px",
+            // color: "#757575",
+            color: "#ffffff",
+            textShadow: "2px 0 #ffffff",
+            letterSpacing: "2px",
+            fontWeight: "bold",
+            fontSize: "25px",
+            fontFamily: "Josefin Sans",
+          }}
+        >
+          What you wish to add?
+        </Text>
         <View style={styles.listView}>
           <View style={styles.imageView}>
             <Image
@@ -37,7 +51,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.fries}`,
               }}
             />
           </View>
@@ -52,7 +66,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.hamburger}`,
               }}
             />
           </View>
@@ -67,7 +81,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.noodle}`,
               }}
             />
           </View>
@@ -82,7 +96,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.pizza}`,
               }}
             />
           </View>
@@ -97,7 +111,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.rice_bowl}`,
               }}
             />
           </View>
@@ -112,7 +126,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.salad}`,
               }}
             />
           </View>
@@ -127,7 +141,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.sushi}`,
               }}
             />
           </View>
@@ -142,7 +156,7 @@ const Addfood = () => {
                 marginVertical: "auto",
               }}
               source={{
-                uri: `${icons.hotdog}`,
+                uri: `${icons.drink}`,
               }}
             />
           </View>
@@ -175,7 +189,7 @@ const styles = StyleSheet.create({
     backgroundImage: `url(${"https://images.pexels.com/photos/1824353/pexels-photo-1824353.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"})`,
     height: "100%",
     width: "100%",
-    maxWidth: "500px",
+    maxWidth: "100%",
     margin: "auto",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
