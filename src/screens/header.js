@@ -5,7 +5,7 @@ import SearchTwoToneIcon from "@material-ui/icons/SearchTwoTone";
 const Header = () => {
   const [value, onChangeText] = React.useState("Search restautants...");
   return (
-    <View style={{ flexDirection: "column" }}>
+    <View style={{ flexDirection: "column", backgroundColor: "#ffffff" }}>
       <View
         style={{
           coureser: "pointer",
@@ -14,23 +14,6 @@ const Header = () => {
           backgroundColor: "white",
         }}
       >
-        <TouchableOpacity
-          style={{
-            width: 50,
-            paddingLeft: SIZES.padding * 2,
-            justifyContent: "center",
-          }}
-        >
-          <Image
-            source={icons.nearby}
-            resizeMode="contain"
-            style={{
-              width: 30,
-              height: 30,
-            }}
-          />
-        </TouchableOpacity>
-
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
@@ -53,7 +36,7 @@ const Header = () => {
                 letterSpacing: 5,
               }}
             >
-              <i>treazer</i>{" "}
+              <i>Treazer</i>{" "}
             </Text>
           </View>
         </View>
@@ -77,10 +60,9 @@ const Header = () => {
       </View>
       <View
         style={{
-          position: "sticky",
-          top: 0,
+          marginBottom: 5,
           width: "100%",
-          background: "rgb(255, 255, 255)",
+          background: "none",
         }}
       >
         <View
@@ -92,16 +74,16 @@ const Header = () => {
             borderRadius: 20,
             justifyContent: "space-evenly",
             alignItems: "center",
-            backgroundColor: "#fff9c4",
+            boxShadow: "0px 4px 4px 0px #C9CCD1, 0px 0px 2px #C9CCD1",
           }}
         >
           <SearchTwoToneIcon
             fontSize="default"
-            style={{ marginHorizontal: "auto", color: "#d84315" }}
+            style={{ marginHorizontal: "auto", color: "#00b0ff" }}
           />
           <TextInput
             style={{
-              color: "#d84315",
+              color: "#00b0ff",
               fontFamily: "Josefin Sans",
               height: 40,
               width: "80%",

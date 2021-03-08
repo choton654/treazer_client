@@ -5,7 +5,7 @@ import {
   BottomTabBar,
 } from "@react-navigation/bottom-tabs";
 import Svg, { Path } from "react-native-svg";
-import { isIphoneX } from "react-native-iphone-x-helper";
+// import { isIphoneX } from "react-native-iphone-x-helper";
 import { Home, Profile, Addfood } from "../screens";
 // import Profile from "../screens/profile";
 import { COLORS, icons } from "../constants";
@@ -63,25 +63,7 @@ const TabBarCustomButton = ({ accessibilityState, children, onPress }) => {
 };
 
 const CustomTabBar = (props) => {
-  if (isIphoneX()) {
-    return (
-      <View>
-        <View
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: 30,
-            backgroundColor: COLORS.white,
-          }}
-        ></View>
-        <BottomTabBar {...props.props} />
-      </View>
-    );
-  } else {
-    return <BottomTabBar {...props.props} />;
-  }
+  return <BottomTabBar {...props.props} />;
 };
 
 const Tabs = () => {
@@ -112,7 +94,7 @@ const Tabs = () => {
               style={{
                 width: 25,
                 height: 25,
-                tintColor: focused ? COLORS.primary : COLORS.secondary,
+                tintColor: focused ? "#ffffff" : "#00A7FF",
               }}
             />
           ),
@@ -131,7 +113,7 @@ const Tabs = () => {
               style={{
                 width: 25,
                 height: 25,
-                tintColor: focused ? COLORS.primary : COLORS.secondary,
+                tintColor: focused ? "#ffffff" : "#00A7FF",
               }}
             />
           ),
@@ -149,7 +131,7 @@ const Tabs = () => {
               style={{
                 width: 25,
                 height: 25,
-                tintColor: focused ? COLORS.primary : COLORS.secondary,
+                tintColor: focused ? "#ffffff" : "#00A7FF",
               }}
             />
           ),
@@ -167,7 +149,7 @@ const Tabs = () => {
               style={{
                 width: 25,
                 height: 25,
-                tintColor: focused ? COLORS.primary : COLORS.secondary,
+                tintColor: focused ? "#ffffff" : "#00A7FF",
               }}
             />
           ),
@@ -186,7 +168,7 @@ const Tabs = () => {
               style={{
                 width: 25,
                 height: 25,
-                tintColor: focused ? COLORS.primary : COLORS.secondary,
+                tintColor: focused ? "#ffffff" : "#00A7FF",
               }}
             />
           ),

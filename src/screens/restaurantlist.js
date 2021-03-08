@@ -13,6 +13,7 @@ const Restaurantlist = ({ item, onSelectCategory, selectedCategory }) => {
         alignItems: "center",
         justifyContent: "center",
         marginRight: SIZES.padding,
+        marginLeft: SIZES.padding,
         ...styles.shadow,
         boxShadow: "0px 4px 4px 0px #C9CCD1, 0px 0px 2px #C9CCD1",
       }}
