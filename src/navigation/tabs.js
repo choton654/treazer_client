@@ -89,7 +89,7 @@ const Tabs = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
-              source={icons.cutlery}
+              source="https://image.flaticon.com/icons/png/512/69/69524.png"
               resizeMode="contain"
               style={{
                 width: 25,
@@ -103,7 +103,7 @@ const Tabs = () => {
       />
 
       <Tab.Screen
-        name="Search"
+        name="Cart"
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -126,7 +126,7 @@ const Tabs = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
-              source={`https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/512/add-icon.png`}
+              source={`https://image.flaticon.com/icons/png/512/63/63747.png`}
               resizeMode="contain"
               style={{
                 width: 25,
@@ -144,9 +144,10 @@ const Tabs = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
-              source={`https://cdn4.iconfinder.com/data/icons/two-colour-thin-minimalist-design-volume-1-32-elem/110/01-04-notification-512.png`}
+              source={`https://pics.freeicons.io/uploads/icons/png/7365665041556281661-512.png`}
               resizeMode="contain"
               style={{
+                marginLeft: 5,
                 width: 25,
                 height: 25,
                 tintColor: focused ? "#ffffff" : "#00A7FF",
