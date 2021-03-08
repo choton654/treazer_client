@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   SafeAreaView,
-  Text,
   ScrollView,
   View,
   StyleSheet,
@@ -13,7 +12,7 @@ import {
 import Header from "./header";
 import Restaurantlist from "./restaurantlist";
 import Restaurantcard from "./restaurantcard";
-import { icons, images, COLORS, FONTS } from "../constants";
+import { icons, images, COLORS } from "../constants";
 const { width } = Dimensions.get("window");
 // const height = width * 0.6;
 const Home = ({ navigation }) => {
@@ -366,21 +365,11 @@ const Home = ({ navigation }) => {
           flexGrow: 0,
         }}
       >
-        <Text
-          style={{
-            marginLeft: 20,
-            ...FONTS.h4,
-            fontWeight: 900,
-            fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
-          }}
-        >
-          Latest offer for you
-        </Text>
         <View
           style={{
             marginVertical: 20,
             flexDirection: "row",
-            height: "30%",
+            height: "50%",
             maxHeight: "200px",
             width: "100%",
             marginTop: 10,
@@ -458,18 +447,6 @@ const Home = ({ navigation }) => {
           </View> */}
         </View>
 
-        <Text
-          style={{
-            marginLeft: 20,
-            marginTop: 10,
-            ...FONTS.h4,
-
-            fontWeight: 900,
-            fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol`,
-          }}
-        >
-          Eat what makes you happy
-        </Text>
         <FlatList
           data={categoryData}
           horizontal
@@ -488,24 +465,6 @@ const Home = ({ navigation }) => {
     );
   }
 
-  // const renderRestaurantList = () => {
-  //   const renderItem = ({ item }) => <Restaurantcard item={item} restaurants={restaurants}  />;
-
-  //   return (
-  //     <FlatList
-  //       data={restaurants}
-  //       keyExtractor={(item) => `${item.id}`}
-  //       renderItem={renderItem}
-  //       style={{ backgroundColor: COLORS.white }}
-  //       contentContainerStyle={{
-  //         paddingHorizontal: SIZES.padding * 2,
-  //         paddingTop: 10,
-  //         paddingBottom: 30,
-  //       }}
-  //     />
-  //   );
-  // };
-
   return (
     <SafeAreaView
       style={{ backgroundColor: "#ffffff", marginBottom: 5, flex: 1 }}
@@ -513,7 +472,13 @@ const Home = ({ navigation }) => {
       {renderHeader()}
       <ScrollView style={styles.container}>
         {renderMainCategories()}
-        <View style={{ backgroundColor: "#ffffff", paddingHorizontal: 20 }}>
+        <View
+          style={{
+            backgroundColor: "#ffffff",
+            paddingHorizontal: 20,
+            marginTop: 20,
+          }}
+        >
           <Restaurantcard item={restaurants} />
         </View>
       </ScrollView>

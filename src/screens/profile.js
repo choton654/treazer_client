@@ -1,60 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
+import ProfileBio from "./ProfileBio";
 
 const Profile = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleLogin = () => {
+    setIsLogin(!isLogin);
+  };
+
   return (
-    <View style={{ flex: 1, flexDirection: "column" }}>
-      <View style={styles.container}>
-        {" "}
-        <PowerSettingsNewIcon fontSize="large" style={{ color: "#ffffff" }} />
-        <Text
-          style={{
-            marginVertical: "30px",
-            // color: "#757575",
-            color: "#888888",
-            textShadow: "2px 0 #888888",
-            letterSpacing: "2px",
-            fontWeight: "bold",
-            fontSize: "30px",
-            fontFamily: "Josefin Sans",
-          }}
-        >
-          LIVE FOR FOOD
-        </Text>
-      </View>
-      <View style={styles.profile}>
-        <Text style={styles.text}>
-          ACCOUNT
-          <br />
-          <span style={{ fontSize: "12px", letterSpacing: 0 }}>
-            Login/Create Account quickly to manage orders{" "}
-          </span>
-        </Text>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.text2}>
-            <span
+    <View style={{ flex: 1 }}>
+      {!isLogin ? (
+        <View style={{ flex: 1, flexDirection: "column" }}>
+          <View style={styles.container}>
+            {" "}
+            <PowerSettingsNewIcon
+              fontSize="large"
+              style={{ color: "#ffffff" }}
+            />
+            <Text
               style={{
-                color: "#ffffff",
+                marginVertical: "30px",
+                // color: "#757575",
+                color: "#888888",
+                textShadow: "2px 0 #888888",
+                letterSpacing: "2px",
+                fontWeight: "bold",
+                fontSize: "30px",
                 fontFamily: "Josefin Sans",
-                letterSpacing: 4,
               }}
             >
-              Login
-            </span>
-          </Text>
-        </TouchableOpacity>
-        <Text
-          style={{
-            marginVertical: "20px",
-            fontFamily: "Josefin Sans",
-            fontSize: "15px",
-          }}
-        >
-          Don't have an account?{" "}
-          <span style={{ color: "#00e676" }}>Signup Here</span>
-        </Text>
-      </View>
+              LIVE FOR FOOD
+            </Text>
+          </View>
+          <View style={styles.profile}>
+            <Text style={styles.text}>
+              ACCOUNT
+              <br />
+              <span style={{ fontSize: "12px", letterSpacing: 0 }}>
+                Login/Create Account quickly to manage orders{" "}
+              </span>
+            </Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.text2}>
+                <span
+                  style={{
+                    color: "#ffffff",
+                    fontFamily: "Josefin Sans",
+                    letterSpacing: 4,
+                  }}
+                >
+                  Login
+                </span>
+              </Text>
+            </TouchableOpacity>
+            <Text
+              style={{
+                marginVertical: "20px",
+                fontFamily: "Josefin Sans",
+                fontSize: "15px",
+              }}
+            >
+              Don't have an account?{" "}
+              <span style={{ color: "#00e676" }}>Signup Here</span>
+            </Text>
+          </View>
+        </View>
+      ) : (
+        <ProfileBio handleLogin={handleLogin} />
+      )}
     </View>
   );
 };

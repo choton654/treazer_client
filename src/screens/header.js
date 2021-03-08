@@ -60,7 +60,7 @@ const Header = () => {
       </View>
       <View
         style={{
-          marginBottom: 5,
+          marginBottom: 10,
           width: "100%",
           background: "none",
         }}
@@ -79,11 +79,11 @@ const Header = () => {
         >
           <SearchTwoToneIcon
             fontSize="default"
-            style={{ marginHorizontal: "auto", color: "#00b0ff" }}
+            style={{ marginHorizontal: "auto", color: "#78909c" }}
           />
           <TextInput
             style={{
-              color: "#00b0ff",
+              color: "#78909c",
               fontFamily: "Josefin Sans",
               height: 40,
               width: "80%",
